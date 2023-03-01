@@ -12,7 +12,7 @@ module.exports = {
         },
         {
             test: /\.css$/i,
-            use: ["style-loader", "css-loader"]
+            use: ["style-loader", "css-loader", "postcss-loader"]
         }
       ],
     },
@@ -36,5 +36,5 @@ module.exports = {
         port: 3000,
         open: true,
         historyApiFallback: true,
-    }
+      }
   };
