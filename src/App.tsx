@@ -6,15 +6,20 @@ import Login from './views/Login'
 import Register from './views/Register'
 import Welcome from './views/Welcome'
 
+import Navbar from './components/Navbar'
 
 
 function App() {
+
   return (
-    <Routes>
-      <Route path='/' element={<Welcome />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
-    </Routes>
+    <>
+      <Navbar userLogged={false}/>
+      <Routes>
+        <Route path='/' element={<Welcome />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+      </Routes>
+    </>
   )
 }
 
