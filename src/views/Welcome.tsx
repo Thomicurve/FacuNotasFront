@@ -13,26 +13,28 @@ function Welcome() {
   return (
     <>
       <main>
-        <div>
-          <h1 className='text-3xl font-bold underline'>FacuNotas</h1>
-          <h3>Tomar apuntes nunca fue tan fácil</h3>
-          <div>
-              <button >
-                <Link to='/register'>Comenzar HOY</Link>
+        <div className='mt-44'>
+          <h1 className='text-8xl text-center font-bold text-white'>FacuNotas</h1>
+          <h3 className='text-center text-gray-100'>Tomar apuntes nunca fue tan fácil</h3>
+          <div className='w-full flex justify-center mt-5'>
+              <button className='text-white font-bold button-gradient'>
+                <Link to='/register'>Comience HOY</Link>
               </button>
           </div>
         </div>
       </main>
-      <section className='info-container'>
-        <h4>Qué es FacuNotas?</h4>
-        <p>El propósito de “FacuNotas” es el de tener una mejor gestión de las materias, sea en el nivel educativo que se encuentre el usuario. Este va a poder agilizar el tomar nota en clase, y a su vez, también hace mas rápida la búsqueda de las asignaturas en la que se encuentra. Esta aplicación es una versión digitalizada y mejorada de las carpetas convencionales, ya que esta contiene caratulas, listado de cosas para hacer y demás, todo en tu celular.</p>
-        <article>
-          <div>
-            <h6>BACKUP EN LA NUBE</h6>
+      <section className='px-8 py-5 text-white bg-black info-container'>
+        <h4 className='text-4xl font-bold'>Qué es FacuNotas?</h4>
+        <p className='mt-8 text-lg'>El propósito de “FacuNotas” es el de tener una mejor gestión de las materias, sea en el nivel educativo que se encuentre el usuario. Este va a poder agilizar el tomar nota en clase, y a su vez, también hace mas rápida la búsqueda de las asignaturas en la que se encuentra. Esta aplicación es una versión digitalizada y mejorada de las carpetas convencionales, ya que esta contiene caratulas, listado de cosas para hacer y demás, todo en tu celular.</p>
+        <article className='flex justify-center gap-44'>
+          <div className='info-container__logos'>
+            <img src="" alt="Cloud icon" />
+            <h6 className=''>BACKUP EN LA NUBE</h6>
             <p>Tus apuntes están seguros en la nube</p>
           </div>
-          <div>
-            <h6>RAPIDEZ</h6>
+          <div className='info-container__logos'>
+            <img src="" alt="Cloud icon" />
+            <h6 className=''>RAPIDEZ</h6>
             <p>Ubica tus apuntes de manera rápida y sin perder tiempo</p>
           </div>
         </article>

@@ -9,9 +9,33 @@
 
 body {
     overflow-x: hidden;
+    background-color: #07060B;
+}
+
+.button-gradient {
+    background-image: linear-gradient(to left, #FFE53B 0%, #FF2525 74%);
+    padding: 10px 0;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.normal-button {
+    background-color: #FF2525;
+    color: #ffff;
 }
 
 .navbar-container {
     padding: 10px;
-    background: linear-gradient(to right, #fee140, #fa709a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #FFE53B;
+    background-image: linear-gradient(to left, #FFE53B 0%, #FF2525 74%);
+}
+
+.info-container__logos {
+    text-align: center;
+}
+
+.info-container__logos h6 {
+    color: #FF2525;
+    font-weight: bold;
+    font-size: 20px;
 }
