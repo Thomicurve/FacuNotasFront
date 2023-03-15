@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import useUserSession from '../hooks/useUserSession'
-import { IApiRepsonse } from '../interfaces/Api.interfaces'
+import { IApiResponse } from '../interfaces/Api.interfaces'
 import { ISelectorReducer } from '../interfaces/Reducers.intefaces'
 import { SignIn } from '../services/Auth'
 
@@ -15,7 +15,7 @@ function Login() {
   
   const handleLogin = async () => {
     
-    const result: IApiRepsonse = await SignIn(emailInput.current.value, passwInput.current.value, userToken);
+    const result: IApiResponse = await SignIn(emailInput.current.value, passwInput.current.value, userToken);
   
     if(!result.error) 
       saveUserToken(result.token);

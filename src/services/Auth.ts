@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { IApiRepsonse } from '../interfaces/Api.interfaces';
+import { IApiResponse, IUserData } from '../interfaces/Api.interfaces';
 const apiURL = "http://localhost:3000";
 
 
-export const SignIn = async (email: string, password: string, token: string): Promise<IApiRepsonse>  => {
+export const SignIn = async (email: string, password: string, token: string): Promise<IApiResponse>  => {
   console.log(token);
   try {
     const {data} = await axios.post(`${apiURL}/signin`, {email, password}, {
@@ -12,12 +12,12 @@ export const SignIn = async (email: string, password: string, token: string): Pr
       }
     })
 
-    const result: IApiRepsonse = {error: false, token: data.token}
+    const result: IApiResponse = {error: false, token: data.token}
     console.log(result);
     return result;
 
   } catch (error) {
-    const result: IApiRepsonse = {error: true, msg: error.response.data.msg} 
+    const result: IApiResponse = {error: true, msg: error.response.data.msg} 
     console.log(result);
   
     return result;
@@ -25,12 +25,17 @@ export const SignIn = async (email: string, password: string, token: string): Pr
   
 }
 
-export const getUserInfo = async (token: string) => {
-  const {data} = await axios.get(`${apiURL}/user-info`, {
+interface IUserDataResponse {
+  data: {
+    userData: IUserData;
+  } 
+}
+export const getUserInfo = async (token: string): Promise<IUserData> => {
+  const {data}: IUserDataResponse = await axios.get(`${apiURL}/user-info`, {
     headers: {
       "Authorization": `Bearer ${token}`
     }
   });
 
-  console.log(data);
+  return data.userData;
 }
